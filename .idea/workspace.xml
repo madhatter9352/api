@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8790a37b-e73f-493d-92d5-525d8e6a49b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_27_140519_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_27_140519_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_27_140801_create_reviews_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_27_140801_create_reviews_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_27_140801_create_reviews_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="236">
+              <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -206,40 +205,6 @@
               <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
               <item name="eapi" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="eapi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="eapi" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -281,16 +246,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587993764028</updated>
-      <workItem from="1587993766775" duration="3840000" />
+      <workItem from="1587993766775" duration="4473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3840000" />
+    <option name="totallyTimeSpent" value="4473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21028744" />
@@ -354,8 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_04_27_140801_create_reviews_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="236">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
