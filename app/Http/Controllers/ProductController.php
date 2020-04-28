@@ -47,7 +47,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param  Product  $product
      * @return \Illuminate\Http\Response
      */
     public function show(Product $product)
@@ -66,6 +66,9 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+        $product->update($request->all());
+
+        return response([],Response::HTTP_OK);
     }
 
     /**
