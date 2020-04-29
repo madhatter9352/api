@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 use App\Review;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
+        $this->call(UserSeeder::class);
+
+        factory(User::class,5)->create();
         factory(Product::class,50)->create();
         factory(Review::class,300)->create();
     }

@@ -4,6 +4,7 @@
 
 use App\Product;
 use Faker\Generator as Faker;
+use App\User;
 
 $factory->define(Product::class, function (Faker $faker) {
     return [
@@ -12,6 +13,9 @@ $factory->define(Product::class, function (Faker $faker) {
         'detail'=>$faker->paragraph,
         'price'=>$faker->numberBetween(100,1000),
         'stock'=>$faker->randomDigit,
-        'discount'=>$faker->numberBetween(2,30)
+        'discount'=>$faker->numberBetween(2,30),
+        'usr_id'=> function(){
+            return User::all()->random();
+        }
     ];
 });

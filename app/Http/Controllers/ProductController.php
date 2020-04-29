@@ -7,7 +7,10 @@ use App\Http\Resources\ProductCollection;
 use App\Http\Resources\ProductResource;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use App\Exceptions\ProductNotBelongToUser;
+
 
 
 class ProductController extends Controller
@@ -36,7 +39,9 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         //
+
         $product = new Product($request->all());
+        $product->usr_id = Auth::id();
         $product->save();
 
         return response([
@@ -66,6 +71,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+        $this->ProductUserCheck($product);
         $product->update($request->all());
 
         return response(null,Response::HTTP_OK);
@@ -80,8 +86,15 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        $this->ProductUserCheck($product);
         $product->delete();
-       
+
         return response(null,Response::HTTP_NO_CONTENT);
+    }
+
+    public function ProductUserCheck($product){
+        if(Auth::id() !== $product->usr_id){
+            throw new ProductNotBelongToUser;
+        }
     }
 }
