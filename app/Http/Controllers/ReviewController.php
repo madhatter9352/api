@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ProductNotBelongToUser;
+use App\Http\Requests\ReviewRequest;
 use App\Http\Resources\ReviewResource;
 use App\Product;
 use App\Review;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ReviewController extends Controller
 {
@@ -20,25 +23,21 @@ class ReviewController extends Controller
         return ReviewResource::collection($product->reviews);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
+     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReviewRequest $request,Product $product)
     {
         //
+        $review = new Review($request->all());
+        $product->reviews()->save($review);
+
+        return response([
+            'data' => new ReviewResource($review)
+        ],Response::HTTP_CREATED);
     }
 
     /**
@@ -53,26 +52,27 @@ class ReviewController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Review  $review
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Review $review)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Review $review)
+    public function update(ReviewRequest $request,Product $product, Review $review)
     {
         //
+        $prod=$product->reviews()->get()->toArray();
+        foreach($prod as $key => $p){
+            if($p['id'] == $review->id){
+                $foundIt[] = "match";
+            }
+        }
+        if(isset($foundIt)){
+            $review->update($request->all());
+            return response(null,Response::HTTP_OK);
+        }else{
+            throw new ProductNotBelongToUser;
+        }
     }
 
     /**
@@ -81,8 +81,21 @@ class ReviewController extends Controller
      * @param  \App\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Review $review)
+    public function destroy(Product $product,Review $review)
     {
         //
+        $prod=$product->reviews()->get()->toArray();
+        foreach($prod as $key => $p){
+            if($p['id'] == $review->id){
+                $foundIt[] = "match";
+            }
+        }
+        if(isset($foundIt)){
+            $review->delete();
+            return response(null,Response::HTTP_NO_CONTENT);
+        }else{
+            throw new ProductNotBelongToUser;
+        }
     }
+
 }
